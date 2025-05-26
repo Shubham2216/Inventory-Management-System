@@ -1,0 +1,21 @@
+-- Seed Products
+INSERT INTO Products (name, description, price, quantity) VALUES
+('Laptop', '15-inch laptop with 8GB RAM', 1200.00, 10),
+('Smartphone', '5.5-inch display smartphone', 500.00, 20),
+('Headphones', 'Wireless over-ear headphones', 150.00, 30);
+
+-- Seed Inventory (initially matching the product quantities)
+INSERT INTO Inventory (product_id, quantity) VALUES
+(1, 10),
+(2, 20),
+(3, 30);
+
+-- Seed SalesOrders
+INSERT INTO SalesOrders (product_id, quantity, total_price, order_date) VALUES
+(1, 2, 2400.00, NOW()),
+(3, 5, 750.00, NOW());
+
+-- Seed PurchaseOrders
+INSERT INTO PurchaseOrders (product_id, quantity, supplier_details, order_date) VALUES
+(2, 15, 'ABC Electronics Supplier', NOW()),
+(3, 10, 'XYZ Audio Supplier', NOW());
